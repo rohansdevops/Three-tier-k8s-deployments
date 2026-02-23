@@ -45,12 +45,20 @@ def signup(user: dict):
 @app.post("/login")
 def login(data: dict):
     db = SessionLocal()
-    user = db.query(User).filter(User.phone == data["phone"]).first()
+    try:
+        phone =  data.get("phone")
+        password = data.get("password")
+        user = db.query(User).filter(User.phone ==phone).first()
 
-    if not user:
-        return {"message": "User not found. Please sign up."}
+        if not user:
+            return {"message": "User not found. Please sign up."}
 
-    if user.password == data["password"]:
-        return {"message": "Hello, you have successfully logged in."}
+        if user.password == password:
+            return {"message": "Hello, you have successfully logged in."}
 
-    return {"message": "Invalid password"}
+        return {"message": "Invalid password"}
+    except Exception as e:
+        print(f"Error occured: {e}")
+        return {"message": "Internal Database Error"}, 500
+    finally:
+        db.close()
