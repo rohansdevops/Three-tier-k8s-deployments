@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 9145503154/auth-frontend
+        image: 9145503154/auth-frontend-eks
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
         env:
         - name: NEXT_PUBLIC_API_URL
-          value: http://192.168.49.2:30008
+          value: "/api"

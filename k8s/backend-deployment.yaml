@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 9145503154/auth-backend
+        image: 9145503154/backend
         imagePullPolicy: Always
         env:
         - name: DATABASE_URL
-          value: mysql+pymysql://appuser:app123@mysql-service:3306/authdb
+          value: mysql+pymysql://admin:Passoword#909090@database-1.cdmm2ecekk89.eu-north-1.rds.amazonaws.com:3306/authdb
         ports:
         - containerPort: 8000
