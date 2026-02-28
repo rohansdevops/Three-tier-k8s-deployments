@@ -18,6 +18,6 @@ spec:
         imagePullPolicy: Always
         env:
         - name: DATABASE_URL
-          value: mysql+pymysql://admin:Passoword#909090@database-1.cdmm2ecekk89.eu-north-1.rds.amazonaws.com:3306/authdb
+          value: mysql+pymysql://<username>:<password>@<RDS Host>:<port>/<db user>
         ports:
         - containerPort: 8000
