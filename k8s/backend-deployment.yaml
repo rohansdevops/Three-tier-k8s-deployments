@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 9145503154/auth-backend
+        image: 9145503154/backend
         imagePullPolicy: Always
         env:
         - name: DATABASE_URL

@@ -19,5 +19,5 @@ spec:
         ports:
         - containerPort: 3000
         env:
-        - name: NEXT_PUBLIC_API_URL
-          value: http://192.168.49.2:30008
+        # - name: NEXT_PUBLIC_API_URL
+        #   value: http://192.168.49.2:30008

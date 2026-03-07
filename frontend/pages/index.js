@@ -14,11 +14,15 @@ export default function App() { // Use 'export default' for the main page
   const handleSubmit = async () => {
     // Note: In Next.js, you usually need the full URL if connecting to a separate 
     // Python backend (e.g., http://localhost:8000/signup)
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL; 
-    const endpoint = isSignup ? "/signup" : "/login";
-
+    // const baseUrl = process.env.NEXT_PUBLIC_API_URL; 
+    const endpoint = isSignup ? "/api/signup" : "/api/login";
     try {
-      const response = await fetch(`${baseUrl}${endpoint}`, {
+      // const response = await fetch(`${baseUrl}${endpoint}`, {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(formData),
+      // });
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

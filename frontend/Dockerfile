@@ -1,8 +1,6 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-ENV NEXT_PUBLIC_API_URL=http://192.168.49.2:30008
-
 COPY package.json package-lock.json* ./
 RUN npm install
 
